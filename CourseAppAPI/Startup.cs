@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using CourseAppAPI.Data;
+using CourseAppData.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,7 +30,7 @@ namespace CourseAppAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<StudentContext>(opt => opt.UseSqlServer
+            services.AddDbContext<CourseAppContext>(opt => opt.UseSqlServer
                   (Configuration.GetConnectionString("dbConnection")));
 
 
@@ -42,6 +43,7 @@ namespace CourseAppAPI
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<IStudentRepo, SqlStudentRepo>();
+            services.AddScoped<ICourseRepo, SqlCourseRepo>();
 
         }
 

@@ -9,9 +9,9 @@ namespace CourseAppAPI.Data
     public class SqlStudentRepo : IStudentRepo
     {
 
-        private readonly StudentContext _context;
+        private readonly CourseAppContext _context;
 
-        public SqlStudentRepo(StudentContext context)
+        public SqlStudentRepo(CourseAppContext context)
         {
             _context = context;
         }
