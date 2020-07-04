@@ -44,6 +44,7 @@ namespace CourseAppAPI
 
             services.AddScoped<IStudentRepo, SqlStudentRepo>();
             services.AddScoped<ICourseRepo, SqlCourseRepo>();
+            services.AddScoped<IStudentCourseEnrollement, SqlStudentCourseEnrollementRepo>();
 
         }
 

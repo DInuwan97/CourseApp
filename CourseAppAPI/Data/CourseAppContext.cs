@@ -13,8 +13,7 @@ namespace CourseAppAPI.Data
     {
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
-
-
+        public DbSet<StudentCourseEnrollement> StudentCourseEnrollments { get; set; }
 
 
         public CourseAppContext(DbContextOptions<CourseAppContext> opt) : base(opt)
